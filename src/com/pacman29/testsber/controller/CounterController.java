@@ -25,7 +25,7 @@ public class CounterController {
     }
 
     @GetMapping
-    public List<Counter> getCounters(){
+    public List<Counter> getCounters() {
         return counterService.getCounters();
     }
 
@@ -53,7 +53,7 @@ public class CounterController {
     }
 
     @GetMapping("/summary")
-    public Summary getSum(){
+    public Summary getSum() {
         return counterService.getSummary();
     }
 

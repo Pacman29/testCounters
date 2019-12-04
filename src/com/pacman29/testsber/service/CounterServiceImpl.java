@@ -24,7 +24,7 @@ public class CounterServiceImpl implements CounterService {
     }
 
     @Override
-    public Summary getSummary(){
+    public Summary getSummary() {
         Collection<Counter> counters = counterRepository.getCounters();
         return new Summary(counters.stream().map(Counter::getValue).reduce(0, Integer::sum));
     }
@@ -32,7 +32,7 @@ public class CounterServiceImpl implements CounterService {
     @Override
     public Counter getCounterByName(String counterName) throws CounterNotFoundException {
         Counter counter = counterRepository.findCounterByName(counterName);
-        if(counter == null) {
+        if (counter == null) {
             throw new CounterNotFoundException(counterName);
         }
         return counter;
@@ -44,9 +44,9 @@ public class CounterServiceImpl implements CounterService {
     }
 
     @Override
-    public Counter createCounter(Counter counter)  throws CounterAlreadyExistsException {
+    public Counter createCounter(Counter counter) throws CounterAlreadyExistsException {
         Counter existCounter = counterRepository.addCounter(counter);
-        if(existCounter != null)
+        if (existCounter != null)
             throw new CounterAlreadyExistsException(counter.getName());
         return getCounterByName(counter.getName());
     }
@@ -54,7 +54,7 @@ public class CounterServiceImpl implements CounterService {
     @Override
     public Counter updateCounter(String counterName, CounterValue counter) throws CounterNotFoundException {
         Counter changedCounter = counterRepository.updateCounter(counterName, counter);
-        if(changedCounter == null)
+        if (changedCounter == null)
             throw new CounterNotFoundException(counterName);
         return changedCounter;
     }
@@ -62,7 +62,7 @@ public class CounterServiceImpl implements CounterService {
     @Override
     public Counter deleteCounter(String counterName) throws CounterNotFoundException {
         Counter deletedCounter = counterRepository.deleteCounterByName(counterName);
-        if(deletedCounter == null)
+        if (deletedCounter == null)
             throw new CounterNotFoundException(counterName);
         return deletedCounter;
     }

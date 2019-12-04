@@ -1,6 +1,6 @@
 package com.pacman29.testsber.model;
 
-import lombok.*;
+import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotEmpty;
