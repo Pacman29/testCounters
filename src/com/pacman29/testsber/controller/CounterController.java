@@ -10,7 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
@@ -36,19 +35,19 @@ public class CounterController {
     }
 
     @GetMapping(value = "{counterName}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Counter getCounterByName(@PathVariable @NotNull String counterName) {
+    public Counter getCounterByName(@PathVariable String counterName) {
         return counterService.getCounterByName(counterName);
     }
 
     @PutMapping(value = "{counterName}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Counter updateCounter(
-            @PathVariable @NotNull String counterName,
+            @PathVariable String counterName,
             @Valid @RequestBody CounterValue newCounterParams) {
         return counterService.updateCounter(counterName, newCounterParams);
     }
 
     @DeleteMapping("{counterName}")
-    public Counter deleteCounter(@PathVariable @NotNull String counterName) {
+    public Counter deleteCounter(@PathVariable String counterName) {
         return counterService.deleteCounter(counterName);
     }
 
