@@ -8,6 +8,7 @@ group = 'com.pacman29'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 sourceSets.main.java.srcDirs = ['src']
+sourceSets.main.resources.srcDirs = ['res']
 
 springBoot {
     mainClassName = 'com.pacman29.testsber.Application'

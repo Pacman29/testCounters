@@ -8,10 +8,10 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @Accessors(chain = true)
 public class Counter extends CounterValue {
-    @NotEmpty(message = "Please provide a name")
+    @NotEmpty(message = "{validation.provide_name}")
     private String name;
 
-    public Counter(@NotEmpty(message = "Please provide a name") String name, Integer value) {
+    public Counter(@NotEmpty(message = "{validation.provide_name}") String name, Integer value) {
         super(value);
         this.name = name;
     }
