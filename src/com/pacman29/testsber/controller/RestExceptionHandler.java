@@ -1,8 +1,8 @@
-package com.pacman29.testsber.controllers;
+package com.pacman29.testsber.controller;
 
-import com.pacman29.testsber.exceptions.CounterAlreadyExistsException;
-import com.pacman29.testsber.exceptions.CounterNotFoundException;
-import com.pacman29.testsber.models.ApiError;
+import com.pacman29.testsber.exception.CounterAlreadyExistsException;
+import com.pacman29.testsber.exception.CounterNotFoundException;
+import com.pacman29.testsber.model.ApiError;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;

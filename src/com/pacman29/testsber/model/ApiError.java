@@ -1,5 +1,7 @@
-package com.pacman29.testsber.models;
+package com.pacman29.testsber.model;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -10,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+@Data
+@Accessors(chain = true)
 public class ApiError {
     private HttpStatus status;
     private String message;
@@ -80,29 +84,5 @@ public class ApiError {
 
     public void addValidationErrors(Set<ConstraintViolation<?>> constraintViolations) {
         constraintViolations.forEach(this::addValidationError);
-    }
-
-    public void setMessage(String validation_error) {
-        this.message = validation_error;
-    }
-
-    public HttpStatus getStatus() {
-        return status;
-    }
-
-    public String getDebugMessage() {
-        return debugMessage;
-    }
-
-    public void setDebugMessage(String debugMessage) {
-        this.debugMessage = debugMessage;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public List<ApiSubError> getSubErrors() {
-        return subErrors;
     }
 }

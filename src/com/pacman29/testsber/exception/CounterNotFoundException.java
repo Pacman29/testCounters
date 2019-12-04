@@ -1,4 +1,4 @@
-package com.pacman29.testsber.exceptions;
+package com.pacman29.testsber.exception;
 
 public class CounterNotFoundException extends RuntimeException {
     public CounterNotFoundException(String counterName) {

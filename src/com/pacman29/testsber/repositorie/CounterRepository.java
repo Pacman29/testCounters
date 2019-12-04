@@ -1,11 +1,11 @@
-package com.pacman29.testsber.repositories;
+package com.pacman29.testsber.repositorie;
 
-import com.pacman29.testsber.models.Counter;
-import com.pacman29.testsber.models.CounterValue;
+import com.pacman29.testsber.model.Counter;
+import com.pacman29.testsber.model.CounterValue;
 
 import java.util.Collection;
 
-public interface ICounterRepository {
+public interface CounterRepository {
     Counter findCounterByName(String name);
 
     Collection<Counter> getCounters();

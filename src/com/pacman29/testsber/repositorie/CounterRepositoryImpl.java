@@ -1,7 +1,7 @@
-package com.pacman29.testsber.repositories;
+package com.pacman29.testsber.repositorie;
 
-import com.pacman29.testsber.models.Counter;
-import com.pacman29.testsber.models.CounterValue;
+import com.pacman29.testsber.model.Counter;
+import com.pacman29.testsber.model.CounterValue;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
-public class CounterRepository implements ICounterRepository {
+public class CounterRepositoryImpl implements CounterRepository {
     private final Map<String, Counter> storage = new ConcurrentHashMap<>();
 
     @Override
