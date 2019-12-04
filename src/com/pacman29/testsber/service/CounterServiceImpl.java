@@ -5,7 +5,7 @@ import com.pacman29.testsber.exception.CounterNotFoundException;
 import com.pacman29.testsber.model.Counter;
 import com.pacman29.testsber.model.CounterValue;
 import com.pacman29.testsber.model.Summary;
-import com.pacman29.testsber.repositorie.CounterRepository;
+import com.pacman29.testsber.repository.CounterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

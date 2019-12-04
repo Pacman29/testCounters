@@ -1,4 +1,4 @@
-package com.pacman29.testsber.repositorie;
+package com.pacman29.testsber.repository;
 
 import com.pacman29.testsber.model.Counter;
 import com.pacman29.testsber.model.CounterValue;
